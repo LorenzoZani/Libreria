@@ -14,7 +14,9 @@
 	<ul>
 
 		<c:forEach items="${libri }" var="libro">
-			<li>${libro.getTitolo() } ${libro.getDescrizione() } </li>
+			<li><a href="${pageContext.request.contextPath}/LibroDettaglioServlet?id=${libro.getId()}">
+					titolo: ${libro.getTitolo() }    descrizione: ${libro.getDescrizione() }
+				</a></li>
 		</c:forEach>
 	</ul>
 
