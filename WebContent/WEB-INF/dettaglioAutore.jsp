@@ -20,7 +20,7 @@
 		</c:forEach>
 	</ul>
 
-
+	<a href="${pageContext.request.contextPath}/LibroFormServlet">Aggiungi nuovo libro</a>
 	<a
 		href="${pageContext.request.contextPath}/AutoreDeleteServlet?id=${id}">Cancella</a>
 	<a

@@ -6,14 +6,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Nuovo Autore</title>
 </head>
 <body>
-<h1>Inserimento nuovo form</h1>
-<form action="${pageContext.request.contextPath}/AutoreFormServlet" method="POST">
-	 Nome:<input type="text" name="nome"/>
-	 Cognome:<input type="text" name="cognome"/>
-	 <input type="submit" value="invia"/>
+<h1>Inserimento nuovo Autore</h1>
+	<form action="${pageContext.request.contextPath}/AutoreFormServlet"
+		method="POST">
+		Nome:<input type="text" name="nome" /> Cognome:<input type="text"
+			name="cognome" /> <input type="submit" value="invia" />
 	</form>
 
 </body>
