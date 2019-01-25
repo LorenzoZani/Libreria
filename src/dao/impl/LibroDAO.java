@@ -23,7 +23,6 @@ public class LibroDAO extends AbstractDAO implements ILibroDAO {
     
     private static final String DELETE_LIBRO = "DELETE FROM libro WHERE id = ?";
     
-    private static final String LIBRO_BY_AUTOREID = "SELECT FROM libro WHERE id =?"; 
     
     @Override
     public List<Libro> getAllLibri() {        
@@ -128,26 +127,7 @@ public class LibroDAO extends AbstractDAO implements ILibroDAO {
 		} 
 	}
 
-	@Override
-	public List<Libro> getLibriByAutoreId(int autoreId) {
-
-    	List<Libro> result = new ArrayList<>();
-
-        try (
-                Connection c = getConnection();
-                PreparedStatement ps = c.prepareStatement(LIBRO_BY_AUTOREID);
-                ResultSet rs = ps.executeQuery();
-            ) {        	
-            while (rs.next()) {
-                Libro r = new Libro(rs.getString("titolo"), rs.getString("descrizione"), rs.getInt("autore_id"));
-                r.setId(rs.getInt("id"));
-                result.add(r);
-            }   
-            } catch (Exception e) {
-            e.printStackTrace();
-        }        
-        return result;
-    }
+	
 		
 
    

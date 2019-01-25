@@ -11,5 +11,4 @@ public interface ILibroDAO {
 	public void createLibro (Libro Libro);
 	public void updateLibro (Libro Libro);
 	public void deleteLibro(int libroId);
-	public List<Libro> getLibriByAutoreId(int autoreId);
 }
