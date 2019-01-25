@@ -23,6 +23,7 @@
 
 	<a href="${pageContext.request.contextPath}/AutoreFormServlet">Nuovo
 		Autore</a>
+	<a href="${pageContext.request.contextPath}/LibroServlet">Lista dei libri</a>
 
 
 </body>

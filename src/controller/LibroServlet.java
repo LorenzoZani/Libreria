@@ -1,7 +1,7 @@
 package controller;
 
-
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,15 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Libro;
+import service.ServiceFactory;
 
 /**
- * Servlet implementation class indexServlet
+ * Servlet implementation class LibroServlet
  */
-@WebServlet("/indexServlet")
-public class IndexServlet extends HttpServlet {
+@WebServlet("/LibroServlet")
+public class LibroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-    public IndexServlet() {
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public LibroServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,10 +31,10 @@ public class IndexServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/* 
-		 * */
-		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		List<Libro> libri = ServiceFactory.getLibroService().getAll();
+		request.setAttribute("libri", libri);
+		 
+		request.getRequestDispatcher("/WEB-INF/libro.jsp").forward(request, response);
 	}
 
 	/**
