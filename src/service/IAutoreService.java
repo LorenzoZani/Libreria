@@ -10,5 +10,6 @@ public interface IAutoreService {
 	void delete(int id);
 	List<Autore> getAll();
 	Autore getAutore(int id);
+	
 
 }

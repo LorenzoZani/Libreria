@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Autore;
+
 import models.Recensione;
 import service.ServiceFactory;
 
@@ -39,8 +39,7 @@ public class FormRecensioneServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id=Integer.parseInt(request.getParameter("id"));
-		Autore autore=ServiceFactory.getAutoreService().getAutore(id);
+
 		Recensione recensione = new Recensione(Integer.parseInt(request.getParameter("valutazione")),
 				request.getParameter("testo"),
 				Integer.parseInt(request.getParameter("id")));

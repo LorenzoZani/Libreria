@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletResponse;
 import service.ServiceFactory;
 
 /**
- * Servlet implementation class AutoreDeleteServlet
+ * Servlet implementation class RecensioneDeleteServlet
  */
-@WebServlet("/AutoreDeleteServlet")
-public class AutoreDeleteServlet extends HttpServlet {
+@WebServlet("/RecensioneDeleteServlet")
+public class RecensioneDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AutoreDeleteServlet() {
+    public RecensioneDeleteServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,9 +28,9 @@ public class AutoreDeleteServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id=Integer.parseInt(request.getParameter("id"));
+		int id=Integer.parseInt(request.getParameter("recensione_id"));
 		ServiceFactory.getAutoreService().delete(id);
-		request.getRequestDispatcher("/WEB-INF/autoreCancellato.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/recensioneCancellata.jsp").forward(request, response);
 	}
 
 	/**

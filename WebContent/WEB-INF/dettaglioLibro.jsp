@@ -20,6 +20,7 @@
 			<li>
 			<h3>Valutazione: ${recensione.getValutazione() }</h3>
 			<h3>Recensione: ${recensione.getTesto() }</h3>
+			<a href="${pageContext.request.contextPath}/RecensioneDeleteServlet?recensione_id=${recensione.getId()}">Cancella recensione</a>
 			</li>
 		</c:forEach>
 	</ul>
@@ -28,7 +29,8 @@
 	
 	<a href="${pageContext.request.contextPath}/FormRecensioneServlet?id=${id}">Aggiungi recensione</a>
 	<a
-		href="${pageContext.request.contextPath}/LibroDeleteServlet?id=${id}">Cancella</a>
+		href="${pageContext.request.contextPath}/LibroDeleteServlet?id=${libro.getId()}">Cancella Libro</a>
+	
 	<a href="#">Modifica</a>
 
 </body>

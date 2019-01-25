@@ -51,5 +51,6 @@ public class AutoreService implements IAutoreService {
 		
 		return autoreDAO.getAutore(id);
 	}
+	
 
 }
